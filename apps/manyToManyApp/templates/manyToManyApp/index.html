@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Many to Many Project</title>
+  </head>
+  <body>
+
+    <form action = "/view_users">
+      {% csrf_token %}
+      <input type = "submit" value = "View People">
+    </form>
+
+    <br>
+
+    <form action = "/add" method = "post">
+      {% csrf_token %}
+      <label for = "username">Name</label>
+      <input type = "text" name = "username" value = "">
+      <label for = "interest">Interest</label>
+      <input type = "text" name = "interest" value = "">
+      <input type = "submit" value = "Submit">
+    </form>
+  </body>
+</html>

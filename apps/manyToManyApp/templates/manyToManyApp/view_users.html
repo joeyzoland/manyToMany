@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>View Users</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+
+      {% for i in users %}
+        <tr>
+          <td>{{i.name}}</td>
+          <td>
+            <form action = '/view_interests' method = "post">
+              {% csrf_token %}
+              <input type = "hidden" name = "id" value = {{i.id}}>
+              <input type = "submit" value = "Show">
+            </form>
+          </td>
+      {% endfor %}
+
+    <form action = "/">
+      {% csrf_token %}
+      <input type = "submit" value = "Add User">
+    </form>
+  </body>
+</html>
